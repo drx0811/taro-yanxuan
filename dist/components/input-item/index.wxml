@@ -1,0 +1,10 @@
+<block>
+    <view class="comp-input-item" style="{{anonymousState__temp}}">
+        <input class="comp-input-item__input" style="{{anonymousState__temp2}}" type="{{type}}" value="{{value}}" focus="{{focus}}" password="{{password}}" placeholder="{{placeholder}}" placeholder-class="comp-input-item__input--placeholder" bindinput="handleInput" bindfocus="funPrivateDOBVD" bindblur="funPrivateRuwhN" />
+        <block wx:if="{{!!value}}">
+            <view class="comp-input-item__clear" bindtap="handleClear">
+                <image class="comp-input-item__clear-img" src="{{iconClose}}"></image>
+            </view>
+        </block>
+    </view>
+</block>

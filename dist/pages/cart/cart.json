@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "loading": "../../components/loading/index",
+    "empty": "./empty/index",
+    "button-item": "../../components/button/index",
+    "tip": "./tip/index",
+    "gift": "./gift/index",
+    "list": "./list/index",
+    "item-list": "../../components/item-list/index",
+    "footer": "./footer/index"
+  },
+  "navigationBarTitleText": "购物车"
+}

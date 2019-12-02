@@ -1,0 +1,78 @@
+
+@charset "UTF-8";
+/**
+ * 对于部分不兼容的样式，可以通过 mixins 统一处理
+ */
+/**
+ * // NOTE Taro 编译成 RN 时对 border 的处理有问题
+ * RN 不支持针对某一边设置 style，即 border-bottom-style 会报错
+ * 那么 border-bottom: 1px 就需要写成如下形式：
+ * border: 0 style color; border-bottom-width: 1px;
+ */
+/**
+ * 对于不能打包到 RN 的样式，可以用 mixins 引入，相对美观一些
+ */
+/**
+ * // TODO 1px 的线在各端上实现方式不同，统一出来后续再兼容，目前注意两点：
+ * 1. Taro 中大写的 PX 不会被编译成 rpx/em，但 RN 还未兼容该写法
+ * 2. H5 中 1px(转成 rem 后实际小于 0.5px) + border-radius 会导致 border 不显示
+ */
+/**
+ * NOTE RN 无法通过 text-overflow 实现省略号，这些代码不能打包到 RN 中
+ */
+/**
+ * NOTE 实现多行文本省略，RN 用 Text 标签的 numberOfLines，H5/小程序用 -webkit-line-clamp
+ */
+.cart-gift {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 30rpx;
+  height: 90rpx;
+  background: #ffffff; }
+
+.cart-gift__tag {
+  margin-right: 18rpx;
+  padding: 4rpx 9rpx;
+  color: #f48f18;
+  font-size: 24rpx;
+  font-weight: 200;
+  line-height: 24rpx;
+  border: 1rpx solid #f48f18; }
+
+.cart-gift__txt {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 42rpx; }
+
+.cart-gift__arrow {
+  margin: 0 30rpx;
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 28rpx; }
+
+.cart-gift__line {
+  margin-right: 10rpx;
+  width: 2rpx;
+  height: 50rpx;
+  /* TODO RN 端对 border 的编译存在问题，暂时用如下写法 */
+  border: 0 solid #dddddd;
+  border-right-width: 2rpx; }
+
+.cart-gift__link {
+  font-size: 28rpx;
+  line-height: 28rpx; }

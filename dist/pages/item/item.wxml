@@ -1,0 +1,19 @@
+<block>
+    <block wx:if="{{!loaded}}">
+        <loading __triggerObserer="{{ _triggerObserer }}"></loading>
+    </block>
+    <view class="item" wx:else>
+        <scroll-view scroll-y="{{true}}" class="item__wrap" style="{{anonymousState__temp}}">
+            <gallery list="{{gallery}}" __triggerObserer="{{ _triggerObserer }}"></gallery>
+            <info-base data="{{itemInfo}}" __triggerObserer="{{ _triggerObserer }}"></info-base>
+            <info-param list="{{itemInfo.attrList}}" __triggerObserer="{{ _triggerObserer }}"></info-param>
+            <detail html="{{itemDetail.detailHtml}}" __triggerObserer="{{ _triggerObserer }}"></detail>
+        </scroll-view>
+        <popup visible="{{visible}}" __triggerObserer="{{ _triggerObserer }}" bindonclose="toggleVisible" compStyle="{{popupStyle}}" __fn_onClose="{{true}}">
+            <spec data="{{itemInfo}}" __triggerObserer="{{ _triggerObserer }}" selected="{{selected}}" bindonselect="handleSelect" __fn_onSelect="{{true}}"></spec>
+        </popup>
+        <view class="item__footer">
+            <footer bindonadd="handleAdd" __triggerObserer="{{ _triggerObserer }}" __fn_onAdd="{{true}}"></footer>
+        </view>
+    </view>
+</block>

@@ -1,0 +1,17 @@
+<block>
+    <view class="cate-list">
+        <view wx:key="$original.id" class="cate-list__group" wx:for="{{loopArray0}}" wx:for-item="group" wx:for-index="_anonIdx">
+            <block wx:if="{{!!group.$original.name}}">
+                <view class="cate-list__title"><text class="cate-list__title-txt">{{group.$original.name}}</text>
+                </view>
+            </block>
+            <view class="cate-list__wrap">
+                <view wx:key="$original.id" class="{{item.$loopState__temp2}}" bindtap="handleClick" wx:for="{{group.$anonymousCallee__0}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item.$original}}">
+                    <image class="cate-list__item-img" src="{{item.$original.bannerUrl}}"></image>
+                    <view class="cate-list__item-txt-wrap"><text class="cate-list__item-txt">{{item.$original.name}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

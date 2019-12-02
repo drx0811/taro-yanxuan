@@ -1,0 +1,23 @@
+<block>
+    <view class="home-pin">
+        <view class="home-pin__banner">
+            <view wx:key="index" class="home-pin__banner-item" wx:for="{{picUrls}}" wx:for-item="item" wx:for-index="index">
+                <image class="home-pin__banner-item-img" src="{{item}}" mode="widthFix"></image>
+            </view>
+        </view>
+        <home-title title="免邮拼团" __triggerObserer="{{ _triggerObserer }}" link="#"></home-title>
+        <view class="home-pin__wrap">
+            <swiper class="home-pin__swiper" autoplay="{{true}}" indicator-dots="{{true}}" indicator-active-color="rgb(178, 42, 49)">
+                <swiper-item wx:key="index" class="home-pin__swiper-item" wx:for="{{list}}" wx:for-item="group" wx:for-index="index">
+                    <view wx:key="id" class="home-pin__item" wx:for="{{group}}" wx:for-item="item" wx:for-index="_anonIdx">
+                        <image class="home-pin__item-img" src="{{item.picUrl}}"></image>
+                        <view class="home-pin__item-info"><text class="home-pin__item-price">{{'拼团价¥' + item.price}}</text><text class="home-pin__item-origin">¥{{item.originPrice}}</text>
+                        </view>
+                        <view class="home-pin__item-num"><text class="home-pin__item-num-txt">{{item.userNum}}人团</text>
+                        </view>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+</block>

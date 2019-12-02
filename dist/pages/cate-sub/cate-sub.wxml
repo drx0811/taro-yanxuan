@@ -1,0 +1,24 @@
+<block>
+    <block wx:if="{{!loaded}}">
+        <loading __triggerObserer="{{ _triggerObserer }}"></loading>
+    </block>
+    <view class="cate-sub" wx:else>
+        <view class="cate-sub__menu">
+            <tab list="{{subMenu}}" __triggerObserer="{{ _triggerObserer }}" current="{{current}}" bindonchange="handleMenu" __fn_onChange="{{true}}"></tab>
+        </view>
+        <swiper class="cate-sub__swiper" current="{{current}}" bindchange="handleChange" style="{{anonymousState__temp}}">
+            <swiper-item wx:key="$original.id" class="cate-sub__swiper-item" wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="_anonIdx">
+                <block wx:if="{{!!item.list.length}}">
+                    <scroll-view scroll-y="{{true}}" class="cate-sub__list" style="{{item.$loopState__temp3}}">
+                        <item-list list="{{item.list}}" __triggerObserer="{{ _triggerObserer }}">
+                            <view class="cate-sub__list-title"><text class="cate-sub__list-title-txt">{{item.$original.frontName}}</text>
+                            </view>
+                        </item-list>
+                        <view class="cate-sub__list-tip"><text class="cate-sub__list-tip-txt">横向滑动切换其他分类</text>
+                        </view>
+                    </scroll-view>
+                </block>
+            </swiper-item>
+        </swiper>
+    </view>
+</block>

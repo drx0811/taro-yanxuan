@@ -1,0 +1,16 @@
+<block>
+    <view class="user">
+        <scroll-view scroll-y="{{true}}" class="user__wrap" style="{{anonymousState__temp}}">
+            <profile userInfo="{{userInfo}}" __triggerObserer="{{ _triggerObserer }}"></profile>
+            <menu __triggerObserer="{{ _triggerObserer }}"></menu>
+            <block wx:if="{{userInfo.login}}">
+                <view class="user__logout" bindtap="handleLogin"><text class="user__logout-txt">切换账号</text>
+                </view>
+            </block>
+            <view class="user__empty"></view>
+        </scroll-view>
+        <view class="user__activity">
+            <activity __triggerObserer="{{ _triggerObserer }}"></activity>
+        </view>
+    </view>
+</block>

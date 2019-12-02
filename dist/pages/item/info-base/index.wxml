@@ -1,0 +1,21 @@
+<block>
+    <view class="item-info-base">
+        <view class="item-info-base__header">
+            <view class="item-info-base__header-wrap"><text class="item-info-base__header-name">{{data.name}}</text><text class="item-info-base__header-desc">{{data.simpleDesc}}</text>
+            </view>
+            <view class="item-info-base__header-star"><text class="item-info-base__header-star-txt">{{anonymousState__temp}}</text><text class="item-info-base__header-star-link">{{'好评率>'}}</text>
+            </view>
+        </view>
+        <view class="item-info-base__price"><text class="item-info-base__price-symbol">¥</text><text class="item-info-base__price-txt">{{data.activityPrice || data.retailPrice}}</text>
+            <block wx:if="{{!!data.activityPrice}}"><text class="item-info-base__price-origin">¥{{data.retailPrice}}</text>
+            </block>
+        </view>
+        <block wx:if="{{!!tagList.length}}">
+            <view class="item-info-base__tag">
+                <view wx:key="id" class="item-info-base__tag-item" wx:for="{{tagList}}" wx:for-item="item" wx:for-index="_anonIdx"><text class="item-info-base__tag-item-txt">{{item.tagName}}</text>
+                    <image class="item-info-base__tag-item-img" src="{{rightArrow}}"></image>
+                </view>
+            </view>
+        </block>
+    </view>
+</block>

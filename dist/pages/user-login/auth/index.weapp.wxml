@@ -1,0 +1,3 @@
+<block>
+    <button-item type="primary" __triggerObserer="{{ _triggerObserer }}" text="微信登录" openType="getUserInfo" bindongetuserinfo="agreeAuth" __fn_onGetUserInfo="{{true}}"></button-item>
+</block>

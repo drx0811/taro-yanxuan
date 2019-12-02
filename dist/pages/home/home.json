@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "loading": "../../components/loading/index",
+    "banner": "./banner/index",
+    "policy": "./policy/index",
+    "pin": "./pin/index",
+    "recommend": "./recommend/index"
+  },
+  "navigationBarTitleText": "网易严选"
+}

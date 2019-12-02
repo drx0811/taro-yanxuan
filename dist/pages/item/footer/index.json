@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "button-item": "../../../components/button/index"
+  }
+}

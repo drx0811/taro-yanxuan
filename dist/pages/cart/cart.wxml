@@ -1,0 +1,46 @@
+<block>
+    <block wx:if="{{!loaded}}">
+        <loading __triggerObserer="{{ _triggerObserer }}"></loading>
+    </block>
+    <block wx:elif="{{!login}}">
+        <view class="cart cart--not-login">
+            <empty text="未登陆" __triggerObserer="{{ _triggerObserer }}"></empty>
+            <view class="cart__login">
+                <button-item type="primary" __triggerObserer="{{ _triggerObserer }}" text="登录" bindonclick="toLogin" compStyle="{{_$anonymousState__temp}}" __fn_onClick="{{true}}"></button-item>
+            </view>
+        </view>
+    </block>
+    <view class="cart" wx:else>
+        <scroll-view scroll-y="{{true}}" class="cart__wrap" style="{{anonymousState__temp2}}">
+            <tip list="{{cartInfo.policyDescList}}" __triggerObserer="{{ _triggerObserer }}"></tip>
+            <block wx:if="{{isEmpty}}">
+                <empty __triggerObserer="{{ _triggerObserer }}"></empty>
+            </block>
+            <block wx:if="{{!isEmpty}}">
+                <gift data="{{cartGroupList[0]}}" __triggerObserer="{{ _triggerObserer }}"></gift>
+            </block>
+            <block wx:if="{{!isEmpty}}">
+                <list wx:key="index" __triggerObserer="{{ _triggerObserer }}" promId="{{group.promId}}" promType="{{group.promType}}" list="{{group.cartItemList}}" bindonupdate="funPrivateeawNt" bindonupdatecheck="funPrivatejrLMf" wx:for="{{cartList}}" wx:for-item="group" wx:for-index="index" __fn_onUpdate="{{true}}" __fn_onUpdateCheck="{{true}}"></list>
+            </block>
+            <item-list wx:key="index" __triggerObserer="{{ _triggerObserer }}" list="{{ext.itemList}}" wx:for="{{extList}}" wx:for-item="ext" wx:for-index="index">
+                <view class="cart__ext">
+                    <block wx:if="{{!!ext.picUrl}}">
+                        <image class="cart__ext-img" src="{{ext.picUrl}}"></image>
+                    </block><text class="cart__ext-txt">{{ext.desc}}</text>
+                </view>
+            </item-list>
+            <item-list list="{{recommend.itemList}}" __triggerObserer="{{ _triggerObserer }}">
+                <view class="cart__recommend"><text class="cart__recommend-txt">{{recommend.desc}}</text>
+                </view>
+            </item-list>
+            <block wx:if="{{isShowFooter}}">
+                <view class="cart__footer--placeholder"></view>
+            </block>
+        </scroll-view>
+        <block wx:if="{{isShowFooter}}">
+            <view class="cart__footer">
+                <footer cartInfo="{{cartInfo}}" __triggerObserer="{{ _triggerObserer }}" bindonupdatecheck="funPrivatejrLMf" __fn_onUpdateCheck="{{true}}"></footer>
+            </view>
+        </block>
+    </view>
+</block>

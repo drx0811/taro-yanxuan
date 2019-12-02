@@ -1,0 +1,13 @@
+<block>
+    <view class="cart-footer">
+        <view class="cart-footer__select">
+            <checkbox-item checked="{{anonymousState__temp}}" __triggerObserer="{{ _triggerObserer }}" bindonclick="handleUpdateCheck" __fn_onClick="{{true}}"><text class="cart-footer__select-txt">{{!cartInfo.selectedCount ? '全选' : '已选(' + cartInfo.selectedCount + ')'}}</text>
+            </checkbox-item>
+        </view>
+        <view class="cart-footer__amount"><text class="cart-footer__amount-txt">¥{{anonymousState__temp2}}</text>
+        </view>
+        <view class="cart-footer__btn">
+            <button-item type="primary" __triggerObserer="{{ _triggerObserer }}" text="下单" bindonclick="handleOrder" __fn_onClick="{{true}}"></button-item>
+        </view>
+    </view>
+</block>

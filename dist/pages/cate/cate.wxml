@@ -1,0 +1,23 @@
+<block>
+    <block wx:if="{{!loaded}}">
+        <loading __triggerObserer="{{ _triggerObserer }}"></loading>
+    </block>
+    <view class="cate" wx:else>
+        <scroll-view scroll-y="{{true}}" class="cate__menu" style="{{anonymousState__temp}}">
+            <menu current="{{current}}" __triggerObserer="{{ _triggerObserer }}" list="{{menu}}" bindonclick="handleMenu" __fn_onClick="{{true}}"></menu>
+        </scroll-view>
+        <block>
+            <block wx:if="{{loading}}">
+                <view></view>
+            </block>
+            <block wx:else>
+                <scroll-view scroll-y="{{true}}" class="cate__list" style="{{anonymousState__temp2}}">
+                    <view class="cate__list-wrap">
+                        <banner banner="{{banner}}" __triggerObserer="{{ _triggerObserer }}"></banner>
+                        <list list="{{list}}" __triggerObserer="{{ _triggerObserer }}"></list>
+                    </view>
+                </scroll-view>
+            </block>
+        </block>
+    </view>
+</block>

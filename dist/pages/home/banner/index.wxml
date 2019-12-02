@@ -1,0 +1,9 @@
+<block>
+    <view class="home-banner">
+        <swiper class="home-banner__swiper" circular="{{true}}" autoplay="{{true}}" indicator-dots="{{true}}" indicator-active-color="rgb(178, 42, 49)">
+            <swiper-item wx:key="rank" class="home-banner__swiper-item" wx:for="{{list}}" wx:for-item="item" wx:for-index="_anonIdx">
+                <image class="home-banner__swiper-item-img" src="{{item.img}}"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+</block>

@@ -1,0 +1,12 @@
+<block>
+    <view class="comp-home-title"><text class="comp-home-title__txt">{{title}}</text>
+        <view class="comp-home-title__content">
+            <slot></slot>
+        </view>
+        <block wx:if="{{!!link}}">
+            <view class="comp-home-title__link"><text class="comp-home-title__link-txt">更多</text>
+                <image class="comp-home-title__link-img" src="{{arrowRight}}"></image>
+            </view>
+        </block>
+    </view>
+</block>

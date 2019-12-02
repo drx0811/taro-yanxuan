@@ -1,0 +1,188 @@
+
+@charset "UTF-8";
+/**
+ * 对于部分不兼容的样式，可以通过 mixins 统一处理
+ */
+/**
+ * // NOTE Taro 编译成 RN 时对 border 的处理有问题
+ * RN 不支持针对某一边设置 style，即 border-bottom-style 会报错
+ * 那么 border-bottom: 1px 就需要写成如下形式：
+ * border: 0 style color; border-bottom-width: 1px;
+ */
+/**
+ * 对于不能打包到 RN 的样式，可以用 mixins 引入，相对美观一些
+ */
+/**
+ * // TODO 1px 的线在各端上实现方式不同，统一出来后续再兼容，目前注意两点：
+ * 1. Taro 中大写的 PX 不会被编译成 rpx/em，但 RN 还未兼容该写法
+ * 2. H5 中 1px(转成 rem 后实际小于 0.5px) + border-radius 会导致 border 不显示
+ */
+/**
+ * NOTE RN 无法通过 text-overflow 实现省略号，这些代码不能打包到 RN 中
+ */
+/**
+ * NOTE 实现多行文本省略，RN 用 Text 标签的 numberOfLines，H5/小程序用 -webkit-line-clamp
+ */
+.home-recommend {
+  margin-top: 40rpx;
+  background: #ffffff; }
+
+.home-recommend__title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100rpx; }
+  .home-recommend__title-txt {
+    color: #000000;
+    font-size: 28rpx;
+    line-height: 28rpx;
+    font-weight: bold; }
+
+.home-recommend__list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 0 15rpx; }
+  .home-recommend__list-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0 15rpx 40rpx;
+    width: 50%; }
+    .home-recommend__list-item-desc {
+      padding: 0 12rpx;
+      width: 330rpx;
+      height: 70rpx;
+      line-height: 70rpx;
+      color: #9e8962;
+      font-size: 24rpx;
+      background: #f0ebe2;
+      /*postcss-pxtransform rn eject enable*/
+      overflow: hidden;
+      white-space: nowrap;
+      -o-text-overflow: ellipsis;
+         text-overflow: ellipsis;
+      /*postcss-pxtransform rn eject disable*/ }
+    .home-recommend__list-item-img {
+      width: 330rpx;
+      height: 330rpx;
+      background: #f4f4f4;
+      border-radius: 4rpx; }
+    .home-recommend__list-item-info {
+      margin-top: 20rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+    .home-recommend__list-item-name {
+      color: #333333;
+      font-size: 28rpx;
+      line-height: 40rpx;
+      /*postcss-pxtransform rn eject enable*/
+      overflow: hidden;
+      white-space: nowrap;
+      -o-text-overflow: ellipsis;
+         text-overflow: ellipsis;
+      /*postcss-pxtransform rn eject disable*/ }
+    .home-recommend__list-item-price-wrap {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .home-recommend__list-item-price {
+      color: #ab2b2b;
+      font-size: 32rpx;
+      line-height: 48rpx; }
+    .home-recommend__list-item-price--origin {
+      margin-left: 14rpx;
+      color: #999999;
+      font-size: 30rpx;
+      font-weight: 200;
+      line-height: 48rpx;
+      text-decoration: line-through;
+      -webkit-text-decoration-color: #999999;
+              text-decoration-color: #999999; }
+    .home-recommend__list-item-commend {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin-top: 10rpx;
+      padding: 0 10rpx;
+      height: 70rpx;
+      border-radius: 35rpx;
+      background: #f3f3f3; }
+      .home-recommend__list-item-commend-img {
+        width: 50rpx;
+        height: 50rpx;
+        border-radius: 25rpx; }
+      .home-recommend__list-item-commend-txt {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        margin-left: 10rpx;
+        color: #999999;
+        font-size: 24rpx;
+        line-height: 30rpx;
+        /*postcss-pxtransform rn eject enable*/
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        /* autoprefixer: ignore next */
+        -webkit-box-orient: vertical;
+        /*postcss-pxtransform rn eject disable*/ }

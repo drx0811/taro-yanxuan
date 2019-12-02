@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "input-item": "../../components/input-item/index",
+    "button-item": "../../components/button/index"
+  },
+  "navigationBarTitleText": "登录"
+}

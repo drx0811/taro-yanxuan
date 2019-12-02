@@ -1,0 +1,21 @@
+<block>
+    <view class="cart-list">
+        <view wx:key="$original.id" class="cart-list__item" wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="_anonIdx">
+            <checkbox-item checked="{{item.$original.checked}}" __triggerObserer="{{ _triggerObserer }}" bindonclick="handleUpdateCheck" __fn_onClick="{{true}}" data-e-onclick-so="this" data-e-onclick-a-a="{{item.$original}}"></checkbox-item>
+            <image class="cart-list__item-img" src="{{item.$original.pic}}"></image>
+            <view class="cart-list__item-info">
+                <view class="cart-list__item-title">
+                    <block wx:if="{{!!item.$original.prefix}}"><text class="cart-list__item-title-tag">{{item.$original.prefix}}</text>
+                    </block><text class="cart-list__item-title-name" number-of-lines="{{1}}">{{item.$original.itemName}}</text>
+                </view>
+                <view class="cart-list__item-spec"><text class="cart-list__item-spec-txt">{{item.$loopState__temp2}}</text>
+                </view>
+                <view class="cart-list__item-wrap"><text class="cart-list__item-price">¥{{item.$original.actualPrice}}</text>
+                    <view class="cart-list__item-num">
+                        <input-number num="{{item.$original.cnt}}" __triggerObserer="{{ _triggerObserer }}" bindonchange="handleUpdate" __fn_onChange="{{true}}" data-e-onchange-so="this" data-e-onchange-a-a="{{item.$original}}"></input-number>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

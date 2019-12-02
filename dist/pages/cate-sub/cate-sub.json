@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "loading": "../../components/loading/index",
+    "tab": "./tab/index",
+    "item-list": "../../components/item-list/index"
+  },
+  "navigationBarTitleText": ""
+}

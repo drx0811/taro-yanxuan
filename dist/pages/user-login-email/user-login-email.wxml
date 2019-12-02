@@ -1,0 +1,20 @@
+<block>
+    <view class="user-login-email">
+        <view class="user-login-email__logo">
+            <image src="{{LOGO}}" class="user-login-email__logo-img"></image>
+        </view>
+        <view class="user-login-email__wrap">
+            <input-item value="{{username}}" __triggerObserer="{{ _triggerObserer }}" placeholder="邮箱账号" bindoninput="handleInput" __fn_onInput="{{true}}" data-e-oninput-so="this" data-e-oninput-a-a="username"></input-item>
+            <input-item password="{{true}}" __triggerObserer="{{ _triggerObserer }}" value="{{password}}" placeholder="密码" bindoninput="handleInput" __fn_onInput="{{true}}" data-e-oninput-so="this" data-e-oninput-a-a="password"></input-item>
+            <block wx:if="{{isShowSuggest}}">
+                <view class="user-login-email__suggest">
+                    <view wx:key="$original" class="user-login-email__suggest-item" bindtap="handleSuggest" wx:for="{{loopArray0}}" wx:for-item="suffix" wx:for-index="_anonIdx" data-e-tap-so="this" data-e-tap-a-a="{{suffix.value}}"><text class="user-login-email__suggest-item-txt">{{suffix.value}}</text>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view class="user-login-email__btn">
+            <button-item text="登录" __triggerObserer="{{ _triggerObserer }}" disabled="{{isBtnDisabled}}" loading="{{loading}}" bindonclick="handleLogin" compStyle="{{anonymousState__temp}}" textStyle="{{anonymousState__temp2}}" __fn_onClick="{{true}}"></button-item>
+        </view>
+    </view>
+</block>

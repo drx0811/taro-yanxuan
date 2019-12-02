@@ -1,0 +1,8 @@
+<block>
+    <block wx:if="{{!data.promType}}">
+        <view></view>
+    </block>
+    <view class="cart-gift" wx:else><text class="cart-gift__tag">{{data.promTitle}}</text><text class="cart-gift__txt">{{data.promTip}}</text><text class="cart-gift__arrow">{{'>'}}</text>
+        <view class="cart-gift__line"></view><text class="cart-gift__link">{{data.jumpTitle}}</text>
+    </view>
+</block>

@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "loading": "../../components/loading/index",
+    "gallery": "./gallery/index",
+    "info-base": "./info-base/index",
+    "info-param": "./info-param/index",
+    "detail": "./detail/index",
+    "popup": "../../components/popup/index",
+    "spec": "./spec/index",
+    "footer": "./footer/index"
+  },
+  "navigationBarTitleText": "商品详情"
+}

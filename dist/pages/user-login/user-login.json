@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "auth": "./auth/index.weapp",
+    "button-item": "../../components/button/index"
+  },
+  "navigationBarTitleText": "登录"
+}

@@ -1,0 +1,5 @@
+<block>
+    <view class="cart-empty">
+        <image class="cart-empty__img" src="{{empty}}"></image><text class="cart-empty__txt">{{text || '去添加点什么吧'}}</text>
+    </view>
+</block>

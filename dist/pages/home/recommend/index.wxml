@@ -1,0 +1,27 @@
+<block>
+    <view class="home-recommend">
+        <view class="home-recommend__title"><text class="home-recommend__title-txt">为你推荐</text>
+        </view>
+        <view class="home-recommend__list">
+            <view wx:key="id" class="home-recommend__list-item" bindtap="handleClick" wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="_anonIdx" data-e-tap-so="this" data-e-tap-a-a="{{item.id}}">
+                <image class="home-recommend__list-item-img" src="{{item.categoryItem.listPicUrl}}"></image>
+                <block wx:if="{{!!item.categoryItem.simpleDesc && !item.categoryItem.simpleDescClose}}"><text class="home-recommend__list-item-desc" number-of-lines="{{1}}">{{item.categoryItem.simpleDesc}}</text>
+                </block>
+                <view class="home-recommend__list-item-info">
+                    <block wx:if="{{!!item.categoryItem.limitedTag}}">
+                        <tag text="{{item.categoryItem.limitedTag}}" __triggerObserer="{{ _triggerObserer }}"></tag>
+                    </block><text class="home-recommend__list-item-name" number-of-lines="{{1}}">{{item.categoryItem.name}}</text>
+                    <view class="home-recommend__list-item-price-wrap"><text class="home-recommend__list-item-price">¥{{item.categoryItem.activityPrice || item.categoryItem.retailPrice}}</text>
+                        <block wx:if="{{!!item.categoryItem.activityPrice}}"><text class="home-recommend__list-item-price--origin">¥{{item.categoryItem.retailPrice}}</text>
+                        </block>
+                    </view>
+                    <block wx:if="{{!!(item.categoryItem.comments && item.categoryItem.comments[0] && item.categoryItem.comments[0].content)}}">
+                        <view class="home-recommend__list-item-commend">
+                            <image class="home-recommend__list-item-commend-img" src="{{item.categoryItem.comments[0].frontUserAvatar || defaultAvatar}}"></image><text class="home-recommend__list-item-commend-txt" number-of-lines="{{2}}">{{item.categoryItem.comments[0].content}}</text>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

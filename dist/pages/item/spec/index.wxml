@@ -1,0 +1,20 @@
+<block>
+    <view class="item-spec">
+        <view class="item-spec__info">
+            <image class="item-spec__info-img" src="{{img || data.primaryPicUrl}}"></image>
+            <view class="item-spec__info-wrap">
+                <view class="item-spec__info-price"><text class="item-spec__info-price-txt">{{'价格:¥' + (data.activityPrice || data.retailPrice)}}</text>
+                    <block wx:if="{{!!data.activityPrice}}"><text class="item-spec__info-price-origin">¥{{data.retailPrice}}</text>
+                    </block>
+                </view><text class="item-spec__info-tip">请选择规格属性</text>
+            </view>
+        </view>
+        <view wx:key="$original.id" class="item-spec__group" wx:for="{{loopArray0}}" wx:for-item="group" wx:for-index="_anonIdx2"><text class="item-spec__group-title">{{group.$original.name}}</text>
+            <view class="item-spec__group-list"><text wx:key="$original.id" class="{{item.$loopState__temp2}}" bindtap="handleSelect" wx:for="{{group.$anonymousCallee__0}}" wx:for-item="item" wx:for-index="_anonIdx" data-e-tap-so="this" data-e-tap-a-a="{{item.$original}}" data-e-tap-a-b="{{group.$original.id}}">{{item.$original.value}}</text>
+            </view>
+        </view>
+        <view class="item-spec__group"><text class="item-spec__group-title">数量</text>
+            <input-number num="{{cnt}}" __triggerObserer="{{ _triggerObserer }}" bindonchange="handleUpdate" compStyle="{{anonymousState__temp3}}" numStyle="{{anonymousState__temp4}}" __fn_onChange="{{true}}"></input-number>
+        </view>
+    </view>
+</block>

@@ -1,0 +1,10 @@
+<block>
+    <view class="item-footer">
+        <view wx:key="key" class="item-footer__nav" bindtap="handleNav" wx:for="{{NAV_LIST}}" wx:for-item="item" wx:for-index="_anonIdx" data-e-tap-so="this" data-e-tap-a-a="{{item}}">
+            <image class="item-footer__nav-img" src="{{item.img}}"></image>
+        </view>
+        <view class="item-footer__buy" bindtap="handleBuy"><text class="item-footer__buy-txt">立即购买</text>
+        </view>
+        <button-item type="primary" __triggerObserer="{{ _triggerObserer }}" text="加入购物车" bindonclick="funPrivateWbdnS" compStyle="{{anonymousState__temp}}" __fn_onClick="{{true}}"></button-item>
+    </view>
+</block>

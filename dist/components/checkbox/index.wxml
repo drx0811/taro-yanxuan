@@ -1,0 +1,6 @@
+<block>
+    <view class="comp-checkbox" style="{{anonymousState__temp}}" bindtap="funPrivatebOawu">
+        <image class="comp-checkbox__img" src="{{checked ? checkedIcon : unCheckedIcon}}"></image>
+        <slot></slot>
+    </view>
+</block>

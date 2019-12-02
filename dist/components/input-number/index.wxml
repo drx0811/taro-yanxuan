@@ -1,0 +1,12 @@
+<block>
+    <view class="comp-input-number" style="{{anonymousState__temp}}">
+        <view class="{{anonymousState__temp2}}" bindtap="handleMinus">
+            <image class="comp-input-number__minus-img" src="{{isMinusDisabled ? minusDisabledIcon : minusIcon}}"></image>
+        </view>
+        <view class="comp-input-number__num" style="{{anonymousState__temp3}}"><text class="comp-input-number__num-txt">{{num}}</text>
+        </view>
+        <view class="comp-input-number__plus" bindtap="handlePlus">
+            <image class="comp-input-number__plus-img" src="{{plusIcon}}"></image>
+        </view>
+    </view>
+</block>

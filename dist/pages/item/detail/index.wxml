@@ -1,0 +1,5 @@
+<block>
+    <view class="item-detail">
+        <image wx:key="index" class="item-detail__img" src="{{item}}" mode="widthFix" wx:for="{{imgList}}" wx:for-item="item" wx:for-index="index"></image>
+    </view>
+</block>

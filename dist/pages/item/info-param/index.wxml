@@ -1,0 +1,8 @@
+<block>
+    <view class="item-info-param">
+        <view class="item-info-param__title"><text class="item-info-param__title-txt">商品参数</text>
+        </view>
+        <view wx:key="index" class="item-info-param__item" wx:for="{{list}}" wx:for-item="item" wx:for-index="index"><text class="item-info-param__item-name">{{item.attrName}}</text><text class="item-info-param__item-value">{{item.attrValue}}</text>
+        </view>
+    </view>
+</block>

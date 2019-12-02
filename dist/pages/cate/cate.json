@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "loading": "../../components/loading/index",
+    "menu": "./menu/index",
+    "banner": "./banner/index",
+    "list": "./list/index"
+  },
+  "navigationBarTitleText": "分类"
+}

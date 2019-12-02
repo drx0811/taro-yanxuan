@@ -1,0 +1,12 @@
+<block>
+    <view class="user-login">
+        <view class="user-login__logo">
+            <image src="{{LOGO}}" class="user-login__logo-img"></image>
+        </view>
+        <auth __triggerObserer="{{ _triggerObserer }}"></auth>
+        <button-item plain="{{true}}" __triggerObserer="{{ _triggerObserer }}" text="邮箱账号登录" compStyle="{{BUTTON}}" bindonclick="handleClick" __fn_onClick="{{true}}" data-e-onclick-so="this" data-e-onclick-a-a="email"></button-item>
+        <button-item plain="{{true}}" __triggerObserer="{{ _triggerObserer }}" text="手机号登录" compStyle="{{BUTTON}}" bindonclick="handleClick" __fn_onClick="{{true}}" data-e-onclick-so="this" data-e-onclick-a-a="telephone"></button-item>
+        <view class="user-login__reg"><text class="user-login__reg-txt">{{'手机号快捷注册>'}}</text>
+        </view>
+    </view>
+</block>
